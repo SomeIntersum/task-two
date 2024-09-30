@@ -1,0 +1,63 @@
+<!-- templates/home.html -->
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <main class="main">
+        <section>
+            <h2>Featured Books</h2>
+            <form method="get" class="filter-form">
+                <label for="category">Category:</label>
+                <select name="category" id="category" onchange="this.form.submit()">
+                    <option value="">All Categories</option>
+                    {% for category in categories %}
+                        <option value="{{ category.slug }}"
+                                {% if selected_category == category.slug %}selected{% endif %}>{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="author">Author:</label>
+                <select name="author" id="author" onchange="this.form.submit()">
+                    <option value="">All Authors</option>
+                    {% for author in authors %}
+                        <option value="{{ author }}"
+                                {% if selected_author == author %}selected{% endif %}>{{ author }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="year">Year:</label>
+                <select name="year" id="year" onchange="this.form.submit()">
+                    <option value="">All Years</option>
+                    {% for year in years %}
+                        <option value="{{ year }}" {% if selected_year == year %}selected{% endif %}>{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+
+            <div class="book-container">
+                {% for book in books %}
+                    <div class="book-card">
+                        <h3 class="book-title">{{ book.title }}</h3>
+                        <p class="book-author">by {{ book.author }}</p>
+                        <p class="book-category">Category: {{ book.category.name }}</p>
+                        <p class="book-publication-year">Published: {{ book.publication_year }}</p>
+                        <p class="book-price">Price: ${{ book.price }}</p>
+                        <a class="book-link" href="{% url 'book_detail' book.slug %}">View Details</a>
+                    </div>
+                    {% empty %}
+                    <p>No books available</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        {% if upcoming_notifications %}
+            <section class="notifications">
+                <h3>Upcoming Rental Expirations:</h3>
+                <ul>
+                    {% for notification in upcoming_notifications %}
+                        <li>{{ notification }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+    </main>
+{% endblock %}

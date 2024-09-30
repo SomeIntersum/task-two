@@ -1,0 +1,9 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<main class="container buy-success">
+    <h2>Purchase Successful!</h2>
+    <p>You have successfully purchased {{ book.title }}.</p>
+    <a class="back-button" href="{% url 'book_list' %}">Back to Book List</a>
+</main>
+{% endblock %}

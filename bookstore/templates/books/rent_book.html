@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<main class="container rent-book">
+    <h2>Rent {{ book.title }}</h2>
+    <p>Choose your rental period:</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="rent-button">Rent Now</button>
+    </form>
+</main>
+{% endblock %}

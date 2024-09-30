@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<main class="container buy-book">
+    <h2>Buy {{ book.title }}</h2>
+    <p>Price: ${{ book.price }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="buy-button">Confirm Purchase</button>
+    </form>
+</main>
+{% endblock %}

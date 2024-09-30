@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<main class="container">
+    <section>
+        <h2>Purchased Books</h2>
+        <div class="book-container">
+            {% if purchased_books %}
+                {% for purchase in purchased_books %}
+                    <div class="book-card">
+                        <h3 class="book-title">{{ purchase.book.title }}</h3>
+                        <p class="book-author">by {{ purchase.book.author }}</p>
+                        <p class="book-category">Category: {{ purchase.book.category.name }}</p>
+                        <p class="book-publication-year">Published: {{ purchase.book.publication_year }}</p>
+                        <p class="book-price">Price: ${{ purchase.book.price }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No books purchased yet.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section>
+        <h2>Rented Books</h2>
+        <div class="book-container">
+            {% if rented_books %}
+                {% for rental in rented_books %}
+                    <div class="book-card">
+                        <h3 class="book-title">{{ rental.book.title }}</h3>
+                        <p class="book-author">by {{ rental.book.author }}</p>
+                        <p class="book-category">Category: {{ rental.book.category.name }}</p>
+                        <p class="book-publication-year">Published: {{ rental.book.publication_year }}</p>
+                        <p class="book-price">Rental Period: {{ rental.get_rental_period_display }}</p>
+                        <p class="book-price">Rental End Date: {{ rental.rental_end_date }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No books rented yet.</p>
+            {% endif %}
+        </div>
+    </section>
+</main>
+{% endblock %}

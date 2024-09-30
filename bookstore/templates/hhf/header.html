@@ -1,0 +1,17 @@
+{% load static %}
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'book_list' %}">book_list</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'purchases_and_rentals' %}">My Books</a></li>
+                <li><a href="{% url 'logout' %}">Выйти</a></li>
+            {% else %}
+                <li><a href="{% url 'login_page' %}">Войти</a></li>
+                <li><a href="{% url 'register' %}">Регистрация</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>

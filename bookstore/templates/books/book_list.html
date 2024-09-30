@@ -1,0 +1,30 @@
+<!-- templates/book_list.html -->
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <main class="main">
+        <section>
+            <h2>Book List</h2>
+            <div class="sort-options">
+                <span>Sort by: </span>
+                <a href="?sort_by=category__name">Category</a> |
+                <a href="?sort_by=author">Author</a> |
+                <a href="?sort_by=publication_year">Year</a>
+            </div>
+            <div class="book-container">
+                {% for book in books %}
+                    <div class="book-card">
+                        <h3 class="book-title">{{ book.title }}</h3>
+                        <p class="book-author">by {{ book.author }}</p>
+                        <p class="book-category">Category: {{ book.category.name }}</p>
+                        <p class="book-publication-year">Published: {{ book.publication_year }}</p>
+                        <p class="book-price">Price: ${{ book.price }}</p>
+                        <a class="book-link" href="{% url 'book_detail' book.slug %}">View Details</a>
+                    </div>
+                {% empty %}
+                    <p>No books available</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}

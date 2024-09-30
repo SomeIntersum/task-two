@@ -1,0 +1,31 @@
+<!-- templates/book_list.html -->
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <main class="main">
+        <section>
+            <h2>Book List</h2>
+
+            <div class="book-container">
+
+                <div class="book-card">
+                    <h3 class="book-title">{{ book.title }}</h3>
+                    <p class="book-author">by {{ book.author }}</p>
+                    <p class="book-category">Category: {{ book.category.name }}</p>
+                    <p class="book-publication-year">Published: {{ book.publication_year }}</p>
+                    <p class="book-price">Price: ${{ book.price }}</p>
+                    <a class="book-link" href="{% url 'book_detail' book.slug %}">View Details</a>
+                </div>
+
+            </div>
+        </section>
+
+
+    {% if book.is_available and not is_purchased and not is_rented %}
+        <div class="action-buttons">
+            <a class="rent-button" href="{% url 'rent_book' book.slug %}">Rent Book</a>
+            <a class="buy-button" href="{% url 'buy_book' book.slug %}">Buy Book</a>
+        </div>
+    {% endif %}
+    </main>
+{% endblock %}

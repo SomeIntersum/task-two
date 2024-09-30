@@ -1,0 +1,9 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<main class="container rental-success">
+    <h2>Rental Successful!</h2>
+    <p>You have successfully rented {{ rental.book.title }} for {{ rental.get_rental_period_display }}.</p>
+    <a class="back-button" href="{% url 'book_list' %}">Back to Book List</a>
+</main>
+{% endblock %}
