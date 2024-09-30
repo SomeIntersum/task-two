@@ -1,0 +1,255 @@
+/* Общие стили */
+body {
+    background: #1b1b1b !important;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+nav {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: white;
+}
+
+/* Стили для контейнера книг */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Стили для карточек книг */
+.book-card {
+    background: #2c2c2c;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.book-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.book-author,
+.book-category,
+.book-publication-year,
+.book-price {
+    margin: 10px 0;
+}
+
+.book-link {
+    display: inline-block;
+    padding: 10px;
+    background: #1e90ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.book-link:hover {
+    background: #1c86ee;
+}
+
+/* Стили для карточки товара */
+.book-detail-card {
+    background: #2c2c2c;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для кнопки "Назад" */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #777;
+}
+
+/* Стили для опций сортировки */
+.sort-options {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sort-options a {
+    color: #1e90ff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.sort-options a:hover {
+    color: #1c86ee;
+}
+
+/* Стили для формы фильтрации */
+.filter-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.filter-form label {
+    color: white;
+    margin-right: 5px;
+}
+
+.filter-form select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #2c2c2c;
+    color: white;
+    outline: none;
+}
+
+.filter-form select option {
+    background: #333;
+    color: white;
+}
+
+/* Стили для контейнера книг */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Стили для карточек книг */
+.book-card {
+    background: #2c2c2c;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.book-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.book-author,
+.book-category,
+.book-publication-year,
+.book-price {
+    margin: 10px 0;
+}
+
+.book-link {
+    display: inline-block;
+    padding: 10px;
+    background: #1e90ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.book-link:hover {
+    background: #1c86ee;
+}
+
+/* Стили для блока с кнопками действия */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Основные стили для кнопок */
+.action-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Стили для кнопки аренды */
+.rent-button {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.rent-button:hover {
+    background-color: #218838;
+    color: #fff;
+}
+
+/* Стили для кнопки покупки */
+.buy-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
